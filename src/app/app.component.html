@@ -23,44 +23,46 @@
         <td>{{currentKeg.name}}</td>
         <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
         <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
-        <td><button class="btn btn-default" (click)="editKeg()">Edit</button></td>
+        <td><button class="btn btn-default" (click)="editKeg(currentKeg)">Edit</button></td>
       </tr>
     </tbody>
 
   </table>
 </div>
 
-<h3>Edit Keg</h3>
-<div class="row">
-  <div class="col-md-2">
-    <label>Keg Brand:</label>
+<div *ngIf="selectedKeg">
+  <h3>Edit Keg</h3>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Brand:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="selectedKeg.brand">
+    </div>
   </div>
-  <div class="col-md-10">
-    <input [(ngModel)]="selectedKeg.brand">
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Name:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="selectedKeg.name">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
-    <label>Keg Name:</label>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Price:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="selectedKeg.price">
+    </div>
   </div>
-  <div class="col-md-10">
-    <input [(ngModel)]="selectedKeg.name">
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
-    <label>Keg Price:</label>
-  </div>
-  <div class="col-md-10">
-    <input [(ngModel)]="selectedKeg.price">
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
-    <label>Keg ABV:</label>
-  </div>
-  <div class="col-md-10">
-    <input [(ngModel)]="selectedKeg.alcoholContent">
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg ABV:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="selectedKeg.alcoholContent">
+    </div>
   </div>
 </div>
 
