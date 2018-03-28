@@ -69,7 +69,7 @@ export class AppComponent {
   showLowKegs() {
     this.showingLowInventory = true;
     for (let i = 0; i < this.kegs.length; i++) {
-      if (this.kegs[i].pintsRemaining < 124) {
+      if (this.kegs[i].pintsRemaining < 10) {
         this.lowKegs.push(this.kegs[i])
       }
     }
@@ -77,6 +77,10 @@ export class AppComponent {
 
   hideLowKegs() {
     this.showingLowInventory = null;
+  }
+
+  refillKeg(clickedKeg) {
+    clickedKeg.pintsRemaining = 124;
   }
 
 }

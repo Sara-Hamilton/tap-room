@@ -20,6 +20,8 @@
         <th>Price</th>
         <th>ABV</th>
         <th>Edit</th>
+        <th>Refill</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +33,8 @@
         <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
         <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
         <td><button class="btn btn-secondary" (click)="editKeg(currentKeg)">Edit</button></td>
+        <td><button class="btn btn-secondary" (click)="refillKeg(currentKeg)">Refill</button></td>
+        <td>delete</td>
       </tr>
     </tbody>
   </table>
