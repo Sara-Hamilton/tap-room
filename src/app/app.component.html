@@ -4,5 +4,5 @@
   <h1>Beers on Tap for {{month}}/{{day}}/{{year}}</h1>
 </div>
 <ul>
-  <li *ngFor="let currentKeg of kegs">{{currentKeg.name}}</li>
+  <li [class]="priceColor(currentKeg)" *ngFor="let currentKeg of kegs">{{currentKeg.brand}}, {{currentKeg.name}}, ${{currentKeg.price}} per pint, {{currentKeg.alcoholContent}}% ABV<button class="btn btn-default" (click)="editKeg()">Edit</button></li>
 </ul>

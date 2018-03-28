@@ -18,6 +18,15 @@ export class AppComponent {
     new Keg('Amber Ale', 'Full Sail', 6, 6),
     new Keg('Cascade Pilsner', 'Full Sail', 6, 6),
     new Keg('Black Butte Porter', 'Deschutes', 6, 5.2),
-    new Keg('Mirror Pond Pale Ale', 'Deschutes', 6, 5)
+    new Keg('Mirror Pond Pale Ale', 'Deschutes', 6, 5),
+    new Keg('Guiness Draught', 'Guiness', 7, 4.2)
   ]
+
+  priceColor(currentKeg) {
+    if (currentKeg.price >= 5) {
+      return "bg-success";
+    } else {
+      return "bg-warning";
+    }
+  }
 }
