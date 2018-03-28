@@ -3,3 +3,6 @@
   <h1>Welcome to {{ title }}!</h1>
   <h1>Beers on Tap for {{month}}/{{day}}/{{year}}</h1>
 </div>
+<ul>
+  <li *ngFor="let currentKeg of kegs">{{currentKeg.name}}</li>
+</ul>
