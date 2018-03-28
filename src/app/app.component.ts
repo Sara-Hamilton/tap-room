@@ -22,6 +22,8 @@ export class AppComponent {
     new Keg('Guiness Draught', 'Guiness', 7, 4.2)
   ]
 
+  lowKegs: Keg[] = [];
+
   priceColor(currentKeg) {
     if (currentKeg.price >= 5) {
       return "table-success";
@@ -40,7 +42,7 @@ export class AppComponent {
 
   selectedKeg = null;
   addingKeg = null;
-  public showingLowInventory: boolean = false;
+  showingLowInventory = null;
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
@@ -62,6 +64,19 @@ export class AppComponent {
     this.addingKeg = null;
     let newKeg = new Keg(beerName, beerBrand, price, alcoholContent);
     this.kegs.push(newKeg);
+  }
+
+  showLowKegs() {
+    this.showingLowInventory = true;
+    for (let i = 0; i < this.kegs.length; i++) {
+      if (this.kegs[i].pintsRemaining < 124) {
+        this.lowKegs.push(this.kegs[i])
+      }
+    }
+  }
+
+  hideLowKegs() {
+    this.showingLowInventory = null;
   }
 
 }
