@@ -83,4 +83,8 @@ export class AppComponent {
     clickedKeg.pintsRemaining = 124;
   }
 
+  deleteKeg(clickedKeg) {
+    this.kegs = this.kegs.filter(Keg => Keg !== clickedKeg);
+  }
+
 }

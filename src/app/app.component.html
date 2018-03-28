@@ -34,7 +34,7 @@
         <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
         <td><button class="btn btn-secondary" (click)="editKeg(currentKeg)">Edit</button></td>
         <td><button class="btn btn-secondary" (click)="refillKeg(currentKeg)">Refill</button></td>
-        <td>delete</td>
+        <td><button class="btn btn-secondary" (click)="deleteKeg(currentKeg)">Delete</button></td>
       </tr>
     </tbody>
   </table>
