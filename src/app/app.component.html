@@ -5,6 +5,9 @@
   <h1>Welcome to the {{ title }}!</h1>
 </div>
 
+<button class="btn btn-secondary" (click)="showAddKegForm()">Add a Keg</button>
+<button class="btn btn-secondary" (click)="showLowKegs()">View Low Inventory</button>
+
 <div class="container">
   <h1>Beers on Tap for {{month}}/{{day}}/{{year}}</h1>
   <table class="table">
@@ -13,6 +16,7 @@
         <th>Brand</th>
         <th>Name</th>
         <th>Pour</th>
+        <th>Pints in Keg</th>
         <th>Price</th>
         <th>ABV</th>
         <th>Edit</th>
@@ -23,6 +27,7 @@
         <td>{{currentKeg.brand}}</td>
         <td>{{currentKeg.name}}</td>
         <td><button class="btn btn-secondary" (click)="pourPint(currentKeg)">Pour a Pint</button></td>
+        <td>{{currentKeg.pintsRemaining}}</td>
         <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
         <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
         <td><button class="btn btn-secondary" (click)="editKeg(currentKeg)">Edit</button></td>
@@ -33,7 +38,7 @@
 </div>
 
 <div *ngIf="selectedKeg">
-  <h3>Edit Keg</h3>
+  <h3>Add Keg</h3>
   <div class="row">
     <div class="col-md-2">
       <label>Keg Brand:</label>
@@ -66,7 +71,44 @@
       <input [(ngModel)]="selectedKeg.alcoholContent">
     </div>
   </div>
-  <button class="btn btn-info"(click)="finishedEditing()">Done</button>
+  <button class="btn btn-info" (click)="finishedEditing()">Done</button>
+</div>
+
+<div *ngIf="addingKeg">
+  <h3>Edit Keg</h3>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Brand:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="beerBrand">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Name:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="beerName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Price:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="price">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg ABV:</label>
+    </div>
+    <div class="col-md-10">
+      <input [(ngModel)]="alcoholContent">
+    </div>
+  </div>
+  <button class="btn btn-info" (click)="addKeg(beerName, beerBrand, price, alcoholContent)">Submit</button>
 </div>
 
 </div>

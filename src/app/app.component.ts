@@ -39,6 +39,8 @@ export class AppComponent {
   }
 
   selectedKeg = null;
+  addingKeg = null;
+  public showingLowInventory: boolean = false;
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
@@ -51,4 +53,15 @@ export class AppComponent {
   pourPint(clickedKeg) {
     clickedKeg.pintsRemaining -= 1;
   }
+
+  showAddKegForm() {
+    this.addingKeg = true;
+  }
+
+  addKeg(beerName, beerBrand, price, alcoholContent) {
+    this.addingKeg = null;
+    let newKeg = new Keg(beerName, beerBrand, price, alcoholContent);
+    this.kegs.push(newKeg);
+  }
+
 }
