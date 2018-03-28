@@ -1,15 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
 
-<div style="text-align:center">
+<div class="jumbotron">
   <h1>Welcome to the {{ title }}!</h1>
 </div>
 
-<button class="btn btn-secondary" (click)="showAddKegForm()">Add a Keg</button>
-<button class="btn btn-secondary" (click)="showLowKegs()">View Low Inventory</button>
-
 <div class="container">
-  <h1>Beers on Tap for {{month}}/{{day}}/{{year}}</h1>
+  <h3>Beers on Tap for {{month}}/{{day}}/{{year}} <button class="btn btn-secondary" (click)="showAddKegForm()">Add a Keg</button>
+  <button class="btn btn-secondary" (click)="showLowKegs()">View Low Inventory</button></h3>
   <table class="table">
     <thead>
       <tr>

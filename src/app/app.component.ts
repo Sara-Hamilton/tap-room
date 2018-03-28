@@ -26,17 +26,17 @@ export class AppComponent {
 
   priceColor(currentKeg) {
     if (currentKeg.price >= 5) {
-      return "table-success";
-    } else {
       return "table-warning";
+    } else {
+      return "table-success";
     }
   }
 
   alcoholContentColor(currentKeg) {
     if (currentKeg.alcoholContent >= 5) {
-      return "table-primary";
+      return "text-danger";
     } else {
-      return "table-info";
+      return "text-secondary";
     }
   }
 

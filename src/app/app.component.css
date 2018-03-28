@@ -10,3 +10,9 @@ li {
 th, td {
   border: 1px solid black;
 }
+
+.jumbotron {
+  text-align: center;
+  background-color: #338099;
+  color: white;
+}
