@@ -24,9 +24,15 @@ export class AppComponent {
 
   priceColor(currentKeg) {
     if (currentKeg.price >= 5) {
-      return "bg-success";
+      return "table-success";
     } else {
-      return "bg-warning";
+      return "table-warning";
     }
+  }
+
+  selectedKeg: Keg = this.kegs[0];
+
+  editKeg() {
+
   }
 }
