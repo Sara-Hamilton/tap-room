@@ -47,4 +47,8 @@ export class AppComponent {
   finishedEditing() {
     this.selectedKeg = null;
   }
+
+  pourPint(clickedKeg) {
+    clickedKeg.pintsRemaining -= 1;
+  }
 }
