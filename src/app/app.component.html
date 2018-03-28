@@ -2,7 +2,7 @@
 <div class="container">
 
 <div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
+  <h1>Welcome to the {{ title }}!</h1>
 </div>
 
 <div class="container">
@@ -18,11 +18,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr [class]="priceColor(currentKeg)" *ngFor="let currentKeg of kegs">
+      <tr *ngFor="let currentKeg of kegs">
         <td>{{currentKeg.brand}}</td>
         <td>{{currentKeg.name}}</td>
-        <td>${{currentKeg.price}} per pint</td>
-        <td>{{currentKeg.alcoholContent}}% ABV</td>
+        <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
+        <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
         <td><button class="btn btn-default" (click)="editKeg()">Edit</button></td>
       </tr>
     </tbody>

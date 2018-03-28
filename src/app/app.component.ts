@@ -30,6 +30,14 @@ export class AppComponent {
     }
   }
 
+  alcoholContentColor(currentKeg) {
+    if (currentKeg.price >= 5) {
+      return "table-primary";
+    } else {
+      return "table-info";
+    }
+  }
+
   selectedKeg: Keg = this.kegs[0];
 
   editKeg() {
