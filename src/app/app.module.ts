@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { KegListComponent } from './keg-list/keg-list.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    KegListComponent
+    KegListComponent,
+    EditKegComponent
   ],
   imports: [
     BrowserModule,
