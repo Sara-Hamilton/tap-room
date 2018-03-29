@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKeg of kegs">
+    <tr *ngFor="let currentKeg of childKegList">
       <td>{{currentKeg.brand}}</td>
       <td>{{currentKeg.name}}</td>
       <td><button class="btn btn-secondary" (click)="pourPint(currentKeg)">Pour a Pint</button></td>

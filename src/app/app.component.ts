@@ -17,6 +17,17 @@ export class AppComponent {
   addingKeg = null;
   showingLowInventory = null;
 
+  lowKegs: Keg[] = [];
+
+  masterKegList: Keg[] = [
+    new Keg('Corona Extra', 'Corona', 4, 4.5),
+    new Keg('Amber Ale', 'Full Sail', 6, 6),
+    new Keg('Cascade Pilsner', 'Full Sail', 6, 6),
+    new Keg('Black Butte Porter', 'Deschutes', 6, 5.2),
+    new Keg('Mirror Pond Pale Ale', 'Deschutes', 6, 5),
+    new Keg('Guiness Draught', 'Guiness', 7, 4.2)
+  ]
+
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
@@ -36,14 +47,14 @@ export class AppComponent {
   addKeg(beerName, beerBrand, price, alcoholContent) {
     this.addingKeg = null;
     let newKeg = new Keg(beerName, beerBrand, price, alcoholContent);
-    this.kegs.push(newKeg);
+    this.masterKegList.push(newKeg);
   }
 
   showLowKegs() {
     this.showingLowInventory = true;
-    for (let i = 0; i < this.kegs.length; i++) {
-      if (this.kegs[i].pintsRemaining < 10) {
-        this.lowKegs.push(this.kegs[i])
+    for (let i = 0; i < this.masterKegList.length; i++) {
+      if (this.masterKegList[i].pintsRemaining < 10) {
+        this.lowKegs.push(this.masterKegList[i])
       }
     }
   }
@@ -57,7 +68,7 @@ export class AppComponent {
   }
 
   deleteKeg(clickedKeg) {
-    this.kegs = this.kegs.filter(Keg => Keg !== clickedKeg);
+    this.masterKegList = this.masterKegList.filter(Keg => Keg !== clickedKeg);
   }
 
 }
