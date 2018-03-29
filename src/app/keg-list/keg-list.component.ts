@@ -9,9 +9,19 @@ import { Keg } from '../models/keg.model'
 export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  @Output() clickedDelete = new EventEmitter();
+  @Output() clickedRefill = new EventEmitter();
 
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
+  }
+
+  deleteButtonClicked(kegToDelete: Keg) {
+    this.clickedDelete.emit(kegToDelete);
+  }
+
+  refillButtonClicked(kegToRefill: Keg) {
+    this.clickedRefill.emit(kegToRefill)
   }
 
   priceColor(currentKeg) {
