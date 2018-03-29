@@ -7,7 +7,7 @@
 <div class="container">
   <h3>Beers on Tap for {{month}}/{{day}}/{{year}} <button class="btn btn-secondary" (click)="showAddKegForm()">Add a Keg</button>
   <button class="btn btn-secondary" (click)="showLowKegs()">View Low Inventory</button></h3>
-  <app-keg-list [childKegList]="masterKegList"></app-keg-list>
+  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 </div>
 
 <div *ngIf="selectedKeg">
