@@ -5,49 +5,14 @@
 </div>
 
 <div class="container">
-  <h3>Beers on Tap for {{month}}/{{day}}/{{year}} <button class="btn btn-secondary" (click)="showAddKegForm()">Add a Keg</button>
+  <h3>Beers on Tap for {{month}}/{{day}}/{{year}}
   <button class="btn btn-secondary" (click)="showLowKegs()">View Low Inventory</button></h3>
   <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 </div>
 
-<app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+<app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
 
-<div *ngIf="addingKeg">
-  <h3>Add Keg</h3>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Brand:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="beerBrand">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Name:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="beerName">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Price:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="price">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg ABV:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="alcoholContent">
-    </div>
-  </div>
-  <button class="btn btn-info" (click)="addKeg(beerName, beerBrand, price, alcoholContent)">Submit</button>
-</div>
+<app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
 
 <div *ngIf="showingLowInventory">
   <div class="container">

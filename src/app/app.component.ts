@@ -14,7 +14,7 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
 
   selectedKeg = null;
-  addingKeg = null;
+  // addingKeg = null;
   showingLowInventory = null;
 
   lowKegs: Keg[] = [];
@@ -40,13 +40,7 @@ export class AppComponent {
     clickedKeg.pintsRemaining -= 1;
   }
 
-  showAddKegForm() {
-    this.addingKeg = true;
-  }
-
-  addKeg(beerName, beerBrand, price, alcoholContent) {
-    this.addingKeg = null;
-    let newKeg = new Keg(beerName, beerBrand, price, alcoholContent);
+  addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
   }
 

@@ -1,3 +1,37 @@
-<p>
-  new-keg works!
-</p>
+<button class="btn btn-secondary" (click)="addingKeg = true">Add a Keg</button>
+<div *ngIf="addingKeg">
+  <h3>Add Keg</h3>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Brand:</label>
+    </div>
+    <div class="col-md-10">
+      <input #beerBrand>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Name:</label>
+    </div>
+    <div class="col-md-10">
+      <input #beerName>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg Price:</label>
+    </div>
+    <div class="col-md-10">
+      <input #price>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label>Keg ABV:</label>
+    </div>
+    <div class="col-md-10">
+      <input #alcoholContent>
+    </div>
+  </div>
+  <button class="btn btn-info" (click)="submitForm(beerName.value, beerBrand.value, price.value, alcoholContent.value)">Submit</button>
+</div>
