@@ -1,33 +1,45 @@
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs" selected="selected">All Kegs</option>
-  <option value="lowKegs">Low Kegs</option>
-</select>
+<div class="row">
+  <div class="col-md-2">
+    <div class="form-group">
+      <select class="form-control" (change)="onChange($event.target.value)">
+        <option value="allKegs" selected="selected">All Kegs</option>
+        <option value="lowKegs">Low Kegs</option>
+      </select>
+    </div>
+  </div>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Brand</th>
-      <th>Name</th>
-      <th>Pour</th>
-      <th>Pints in Keg</th>
-      <th>Price</th>
-      <th>ABV</th>
-      <th>Edit</th>
-      <th>Refill</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let currentKeg of childKegList | lowInventory:filterByLowInventory">
-      <td>{{currentKeg.brand}}</td>
-      <td>{{currentKeg.name}}</td>
-      <td><button class="btn btn-secondary" (click)="pourButtonClicked(currentKeg)">Pour a Pint</button></td>
-      <td>{{currentKeg.pintsRemaining}}</td>
-      <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
-      <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
-      <td><button class="btn btn-secondary" (click)="editButtonClicked(currentKeg)">Edit</button></td>
-      <td><button class="btn btn-secondary" (click)="refillButtonClicked(currentKeg)">Refill</button></td>
-      <td><button class="btn btn-secondary" (click)="deleteButtonClicked(currentKeg)">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="card card-body" *ngFor="let currentKeg of childKegList | lowInventory:filterByLowInventory">
+  <div class="row">
+    <div class="col-md-2">
+      {{currentKeg.brand}}
+    </div>
+    <div class="col-md-2">
+      {{currentKeg.name}}<br>
+      <button class="btn btn-secondary" (click)="pourButtonClicked(currentKeg)">Pour a Pint</button>
+    </div>
+    <div class="col-md-1">
+      {{currentKeg.pintsRemaining}} pints left
+    </div>
+    <div class="col-md-2">
+      <div [class]="priceColor(currentKeg)">
+        ${{currentKeg.price}} per pint
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div [class]="alcoholContentColor(currentKeg)">
+        {{currentKeg.alcoholContent}}% ABV
+      </div>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-secondary" (click)="editButtonClicked(currentKeg)">Edit</button>
+
+      <button class="btn btn-secondary" (click)="refillButtonClicked(currentKeg)">Refill</button>
+
+      <button class="btn btn-secondary" (click)="deleteButtonClicked(currentKeg)">Delete</button>
+    </div>
+
+
+
+  </div>
+</div>

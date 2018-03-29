@@ -37,9 +37,9 @@ export class KegListComponent {
 
   priceColor(currentKeg) {
     if (currentKeg.price >= 5) {
-      return "table-warning";
+      return "blue-text";
     } else {
-      return "table-success";
+      return "text-success";
     }
   }
 

@@ -4,12 +4,12 @@
   <h1>Welcome to the {{ title }}!</h1>
 </div>
 
+<app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+
 <div class="container">
   <h3>Beers on Tap for {{month}}/{{day}}/{{year}}</h3>
   <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
 </div>
-
-<app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
 
 <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
 
