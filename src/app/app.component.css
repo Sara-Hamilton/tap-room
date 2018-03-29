@@ -13,6 +13,7 @@ th, td {
 
 .jumbotron {
   text-align: center;
-  background-color: #338099;
+  background-color: black;
   color: white;
+  font-family: 'Comfortaa', cursive;
 }

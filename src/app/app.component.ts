@@ -7,7 +7,7 @@ import { Keg } from './models/keg.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tap Room';
+  title = 'TAP ROOM';
   currentTime = new Date();
   month: number = this.currentTime.getMonth() +1;
   day: number = this.currentTime.getDate();
