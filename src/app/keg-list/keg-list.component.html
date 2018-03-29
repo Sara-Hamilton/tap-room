@@ -1,3 +1,28 @@
-<p>
-  keg-list works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Name</th>
+      <th>Pour</th>
+      <th>Pints in Keg</th>
+      <th>Price</th>
+      <th>ABV</th>
+      <th>Edit</th>
+      <th>Refill</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currentKeg of kegs">
+      <td>{{currentKeg.brand}}</td>
+      <td>{{currentKeg.name}}</td>
+      <td><button class="btn btn-secondary" (click)="pourPint(currentKeg)">Pour a Pint</button></td>
+      <td>{{currentKeg.pintsRemaining}}</td>
+      <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
+      <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
+      <td><button class="btn btn-secondary" (click)="editKeg(currentKeg)">Edit</button></td>
+      <td><button class="btn btn-secondary" (click)="refillKeg(currentKeg)">Refill</button></td>
+      <td><button class="btn btn-secondary" (click)="deleteKeg(currentKeg)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
