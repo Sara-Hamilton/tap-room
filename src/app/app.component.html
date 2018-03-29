@@ -15,34 +15,10 @@
   </div>
 </div>
 
-
 <div class="container">
 <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
-</div>
 
 <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
-
-<!-- <div *ngIf="showingLowInventory">
-  <div class="container">
-    <h3>Low Kegs
-    <button class="btn btn-secondary" (click)="hideLowKegs()">Hide</button></h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Brand</th>
-          <th>Name</th>
-          <th>Pints in Keg</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let currentKeg of lowKegs">
-          <td>{{currentKeg.brand}}</td>
-          <td>{{currentKeg.name}}</td>
-          <td>{{currentKeg.pintsRemaining}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div> -->
+</div>
 
 </div>

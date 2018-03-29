@@ -1,4 +1,4 @@
-<div *ngIf="childSelectedKeg">
+<div *ngIf="childSelectedKeg" class="card">
   <h3>Edit Keg</h3>
   <div class="row">
     <div class="col-md-2">
@@ -32,5 +32,5 @@
       <input [(ngModel)]="childSelectedKeg.alcoholContent">
     </div>
   </div>
-  <button class="btn btn-info" (click)="finishedEditing()">Done</button>
+  <button class="btn btn-secondary" (click)="finishedEditing()">Done</button>
 </div>
