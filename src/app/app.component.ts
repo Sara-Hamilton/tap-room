@@ -14,10 +14,6 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
 
   selectedKeg = null;
-  // addingKeg = null;
-  showingLowInventory = null;
-
-  lowKegs: Keg[] = [];
 
   masterKegList: Keg[] = [
     new Keg('Corona Extra', 'Corona', 4, 4.5),
@@ -42,19 +38,6 @@ export class AppComponent {
 
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
-  }
-
-  showLowKegs() {
-    this.showingLowInventory = true;
-    for (let i = 0; i < this.masterKegList.length; i++) {
-      if (this.masterKegList[i].pintsRemaining < 10) {
-        this.lowKegs.push(this.masterKegList[i])
-      }
-    }
-  }
-
-  hideLowKegs() {
-    this.showingLowInventory = null;
   }
 
   refillKeg(clickedKeg) {
