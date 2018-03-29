@@ -11,6 +11,7 @@ export class KegListComponent {
   @Output() clickSender = new EventEmitter();
   @Output() clickedDelete = new EventEmitter();
   @Output() clickedRefill = new EventEmitter();
+  @Output() clickedPour = new EventEmitter();
 
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
@@ -21,7 +22,11 @@ export class KegListComponent {
   }
 
   refillButtonClicked(kegToRefill: Keg) {
-    this.clickedRefill.emit(kegToRefill)
+    this.clickedRefill.emit(kegToRefill);
+  }
+
+  pourButtonClicked(kegToPour: Keg) {
+    this.clickedPour.emit(kegToPour);
   }
 
   priceColor(currentKeg) {

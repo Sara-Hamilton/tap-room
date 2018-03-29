@@ -16,7 +16,7 @@
     <tr *ngFor="let currentKeg of childKegList">
       <td>{{currentKeg.brand}}</td>
       <td>{{currentKeg.name}}</td>
-      <td><button class="btn btn-secondary" (click)="pourPint(currentKeg)">Pour a Pint</button></td>
+      <td><button class="btn btn-secondary" (click)="pourButtonClicked(currentKeg)">Pour a Pint</button></td>
       <td>{{currentKeg.pintsRemaining}}</td>
       <td [class]="priceColor(currentKeg)">${{currentKeg.price}} per pint</td>
       <td [class]="alcoholContentColor(currentKeg)">{{currentKeg.alcoholContent}}% ABV</td>
