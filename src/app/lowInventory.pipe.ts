@@ -7,14 +7,17 @@ import { Keg } from './models/keg.model';
 })
 
 export class LowInventoryPipe implements PipeTransform {
-  transform(input: Keg[]) {
+  transform(input: Keg[], desiredInventoryView) {
     var output: Keg[] = [];
-    for (let i = 0; i < input.length; i++) {
-      if (input[i].pintsRemaining < 125) {
-        output.push(input[i])
+    if(desiredInventoryView === "lowKegs") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].pintsRemaining < 32) {
+          output.push(input[i])
+        }
       }
+      return output;
+    } else {
+      return input;
     }
-    return output;
   }
-
 }

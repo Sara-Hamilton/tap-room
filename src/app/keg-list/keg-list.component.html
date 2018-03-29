@@ -1,3 +1,8 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs" selected="selected">All Kegs</option>
+  <option value="lowKegs">Low Kegs</option>
+</select>
+
 <table class="table">
   <thead>
     <tr>
@@ -13,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKeg of childKegList | lowInventory">
+    <tr *ngFor="let currentKeg of childKegList | lowInventory:filterByLowInventory">
       <td>{{currentKeg.brand}}</td>
       <td>{{currentKeg.name}}</td>
       <td><button class="btn btn-secondary" (click)="pourButtonClicked(currentKeg)">Pour a Pint</button></td>

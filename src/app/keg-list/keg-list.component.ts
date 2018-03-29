@@ -13,6 +13,12 @@ export class KegListComponent {
   @Output() clickedRefill = new EventEmitter();
   @Output() clickedPour = new EventEmitter();
 
+  filterByLowInventory: string = "allKegs";
+
+  onChange(optionFromMenu) {
+    this.filterByLowInventory = optionFromMenu;
+  }
+
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
