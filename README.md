@@ -1,5 +1,40 @@
 # TapRoom
 
+##### A web app that displays a list of beers on tap.  Some listings are hard coded.  New listings can be created.  Listings can be edited, filtered, and deleted.  03/28/18
+
+## By Sara Hamilton
+
+# Description
+This is an Epicodus practice project for week 3 of the JavaScript course.  It's purpose is to display understanding of Angular.
+
+## Technologies Used
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* Node JS
+* Angular
+
+## Installation
+
+clone the github respository
+```
+$ git clone https://github.com/Sara-Hamilton/tap-room
+```
+move into the directory
+```
+$ cd tap-room
+```
+install npm
+```
+$ npm install
+```
+run the program
+```
+$ ng serve --open
+```
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
 ## Development server
