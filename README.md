@@ -65,7 +65,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 *MIT License*
 
-Copyright (c) 2018 **_Sara Hamilton and Johnny Mayer_**
+Copyright (c) 2018 **_Sara Hamilton_**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
