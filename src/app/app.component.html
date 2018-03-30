@@ -1,24 +1,25 @@
 <div class="container">
 
-<div class="jumbotron">
-  <h1>THE {{ title }}</h1>
-</div>
-<div class="row">
-  <div class="col-md-8">
-    <div class="card col-md-6">
-      <h3>Beers on Tap for {{month}}/{{day}}/{{year}}</h3>
-
+  <div class="jumbotron">
+    <h1>THE {{ title }}</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="card col-sm-6">
+        <h3>Beers on Tap for {{month}}/{{day}}/{{year}}</h3>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
-  </div>
-</div>
 
-<div class="container">
-<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
+    <div class="col-sm-5">
+      <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+    </div>
 
-<app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
-</div>
+  </div>
+
+  <div class="container">
+  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
+
+  <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+  </div>
 
 </div>

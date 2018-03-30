@@ -1,35 +1,37 @@
-<div *ngIf="childSelectedKeg" class="card">
-  <h3>Edit Keg</h3>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Brand:</label>
+<div *ngIf="childSelectedKeg" class="card" style="width:500px">
+  <div class="container">
+    <h3>Edit Keg</h3>
+    <div class="row">
+      <div class="col-md-2">
+        <label>Keg Brand:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)]="childSelectedKeg.brand">
+      </div>
     </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="childSelectedKeg.brand">
+    <div class="row">
+      <div class="col-md-2">
+        <label>Keg Name:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)]="childSelectedKeg.name">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Name:</label>
+    <div class="row">
+      <div class="col-md-2">
+        <label>Keg Price:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)]="childSelectedKeg.price">
+      </div>
     </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="childSelectedKeg.name">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg Price:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="childSelectedKeg.price">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label>Keg ABV:</label>
-    </div>
-    <div class="col-md-10">
-      <input [(ngModel)]="childSelectedKeg.alcoholContent">
+    <div class="row">
+      <div class="col-md-2">
+        <label>Keg ABV:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)]="childSelectedKeg.alcoholContent">
+      </div>
     </div>
   </div>
   <button class="btn btn-secondary" (click)="finishedEditing()">Done</button>

@@ -1,19 +1,21 @@
 <button class="btn btn-secondary righty" (click)="addingKeg = true">Add a Keg</button><br>
 <div *ngIf="addingKeg" class="card righty">
+  <div class="container">
+
   <h3>Add Keg</h3>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <label>Keg Brand:</label>
     </div>
-    <div class="col-md-8">
+    <div class="col-sm-8">
       <input #beerBrand>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-4">
       <label>Keg Name:</label>
     </div>
-    <div class="col-md-8">
+    <div class="col-sm-8">
       <input #beerName>
     </div>
   </div>
@@ -33,5 +35,6 @@
       <input #alcoholContent>
     </div>
   </div>
+</div>
   <button class="btn btn-secondary" (click)="submitForm(beerName.value, beerBrand.value, price.value, alcoholContent.value)">Submit</button>
 </div>
