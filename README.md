@@ -14,6 +14,7 @@ This is an Epicodus practice project for week 3 of the JavaScript course.  Its p
 * JavaScript
 * Node JS
 * Angular
+* Firebase
 
 ## Installation
 
