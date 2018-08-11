@@ -17,9 +17,9 @@
   </div>
 
   <div class="container">
-  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
-
   <app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-keg>
+
+  <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickedDelete)="deleteKeg($event)" (clickedPour)="pourPint($event)" (clickedRefill)="refillKeg($event)"></app-keg-list>
   </div>
 
 </div>
