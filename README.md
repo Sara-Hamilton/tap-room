@@ -5,7 +5,7 @@
 ## By Sara Hamilton
 
 # Description
-This is an Epicodus practice project for week 3 of the JavaScript course.  It's purpose is to display understanding of Angular.
+This is an Epicodus practice project for week 3 of the JavaScript course.  Its purpose is to display understanding of Angular. Visit the deployed site at https://taproom-a3fac.firebaseapp.com/
 
 ## Technologies Used
 * HTML
